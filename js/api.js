@@ -4,14 +4,14 @@ var Api = (function () {
         getComponentList: getComponentList
     };
 
-    function getComponent(id, callBack) {
-        var url = '/Lucouse.github.io/component/' + id + '/index.html';
+    function getComponent(id, fileName,callBack) {
+        var url = '/Lucouse.github.io/component/' + id + '/'+fileName;
         fetch(url).then(function (res) {
             return res.text();
         }).then(function (value) {
             callBack(value);
         }).catch(function (reason) {
-            callBack(reason);
+            message.alertMessage(reason,null)
             console.error(reason);
         });
     }
@@ -23,7 +23,7 @@ var Api = (function () {
         }).then(function (value) {
             callBack(value);
         }).catch(function (reason) {
-            callBack(reason);
+            message.alertMessage(reason,null);
             console.error(reason);
         });
     }
