@@ -1,0 +1,263 @@
+/*
+点转圈加载动画
+*/
+.point1, .point2, .point3, .point4, .point5 {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    transform-origin: 300%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.point1 {
+    background-color: aqua;
+    animation: point1 3s infinite;
+}
+
+.point2 {
+    background-color: blue;
+    animation: point2 3s infinite;
+}
+
+.point3 {
+    background-color: green;
+    animation: point3 3s infinite;
+}
+
+.point4 {
+    background-color: #EBEBEB;
+    animation: point4 3s infinite;
+}
+
+.point5 {
+    background-color: rgb(255, 128, 64);
+    animation: point5 3s infinite;
+}
+
+@-moz-keyframes point1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point4 {
+    0% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point5 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*
+圈旋转加载动画
+*/
+#path880 {
+    animation: circleLoader 10s infinite;
+    transform-origin: 91% 171%;
+}
+
+@-moz-keyframes circleLoader {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.loader1, .loader2, .loader3 {
+    position: absolute;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.loader1 {
+    background-color: blue;
+    animation: loader 3s infinite;
+}
+
+.loader2 {
+    background-color: green;
+    animation: loader 5s infinite;
+}
+
+.loader3 {
+    background-color: aqua;
+    animation: loader 7s infinite;
+}
+
+@-moz-keyframes loader {
+    0% {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+    25% {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+    50% {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        margin-left: 200px;
+    }
+    75% {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+    100% {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        margin-left: 20px;
+    }
+
+}
+/**
+滚动的星星
+ */
+.star {
+    animation: starMove 5s infinite;
+    -webkit-animation: starMove 5s infinite;
+}
+
+.starPanel {
+    animation: starPanelMove 5s infinite;
+    -webkit-animation: starPanelMove 5s infinite;
+}
+
+@keyframes starPanelMove {
+    from {
+        margin-left: 0px;
+        transform-origin: center;
+    }
+    to {
+        margin-left: 250px;
+        transform-origin: center;
+        top: 0px;
+        transform: scale(0.5) rotate(-180deg);
+    }
+}
+
+@-moz-keyframes starPanelMove {
+    from {
+        margin-left: 0px;
+        transform-origin: center;
+    }
+    to {
+        margin-left: 300px;
+        transform-origin: center;
+        top: 0px;
+        transform: scale(0.5) rotate(-180deg);
+    }
+}
+
+@-webkit-keyframes starPanelMove {
+    from {
+        transform-origin: center;
+        margin-left: 0px;
+    }
+    to {
+        margin-left: 300px;
+        transform-origin: center;
+        transform: scale(0.5) rotate(-180deg);
+    }
+}
+
+@keyframes starMove {
+    from {
+        fill: #ffff00;
+    }
+    to {
+        fill: #000000;
+    }
+}
+
+@-moz-keyframes starMove {
+    from {
+        fill: #ffff00;
+    }
+    to {
+        fill: #000000;
+    }
+}
+
+@-webkit-keyframes starMove {
+    from {
+        fill: #ffff00;
+    }
+    to {
+        fill: #000000;
+    }
+}
+
+.main-panel {
+    width: 300px;
+    height: 100px;
+    box-shadow: 2px 2px 8px #EBEBEB;
+    margin-top: 20px;
+    display: inline-table;
+    margin-left: 10px;
+    padding: 5px;
+}
+
+h3 {
+    margin: 0px;
+}
+
+.panel {
+    display: inline-flex;
+    height: calc(100% - 30px);
+    width: 100%;
+}
+
+html body {
+    padding: 0px;
+    margin: 0px;
+    font-family: Microsoft Yahei, "微软雅黑", "宋体", System, Arial;
+}
