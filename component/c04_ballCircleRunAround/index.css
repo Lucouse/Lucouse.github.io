@@ -1,0 +1,88 @@
+.point1, .point2, .point3, .point4, .point5 {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    transform-origin: 300%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.point1 {
+    background-color: aqua;
+    animation: point1 3s infinite;
+}
+
+.point2 {
+    background-color: blue;
+    animation: point2 3s infinite;
+}
+
+.point3 {
+    background-color: green;
+    animation: point3 3s infinite;
+}
+
+.point4 {
+    background-color: #EBEBEB;
+    animation: point4 3s infinite;
+}
+
+.point5 {
+    background-color: rgb(255, 128, 64);
+    animation: point5 3s infinite;
+}
+
+@-moz-keyframes point1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point4 {
+    0% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes point5 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,74 @@
+.star {
+    animation: starMove 5s infinite;
+    -webkit-animation: starMove 5s infinite;
+}
+
+.starPanel {
+    animation: starPanelMove 5s infinite;
+    -webkit-animation: starPanelMove 5s infinite;
+}
+
+@keyframes starPanelMove {
+    from {
+        margin-left: 0px;
+        transform-origin: center;
+    }
+    to {
+        margin-left: 250px;
+        transform-origin: center;
+        top: 0px;
+        transform: scale(0.5) rotate(-180deg);
+    }
+}
+
+@-moz-keyframes starPanelMove {
+    from {
+        margin-left: 0px;
+        transform-origin: center;
+    }
+    to {
+        margin-left: 300px;
+        transform-origin: center;
+        top: 0px;
+        transform: scale(0.5) rotate(-180deg);
+    }
+}
+
+@-webkit-keyframes starPanelMove {
+    from {
+        transform-origin: center;
+        margin-left: 0px;
+    }
+    to {
+        margin-left: 300px;
+        transform-origin: center;
+        transform: scale(0.5) rotate(-180deg);
+    }
+}
+
+@keyframes starMove {
+    from {
+        fill: #ffff00;
+    }
+    to {
+        fill: #000000;
+    }
+}
+
+@-moz-keyframes starMove {
+    from {
+        fill: #ffff00;
+    }
+    to {
+        fill: #000000;
+    }
+}
+
+@-webkit-keyframes starMove {
+    from {
+        fill: #ffff00;
+    }
+    to {
+        fill: #000000;
+    }
+}
