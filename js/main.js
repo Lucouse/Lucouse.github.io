@@ -30,16 +30,29 @@ window.onload = function (ev) {
      */
     function buildToolBar(toolbar, id) {
         var downloadIconPanel = document.createElement("div");
-        var div = document.createElement("div");
-        var i = document.createElement("i");
+        var downloadDiv = document.createElement("div");
+        var downloadI = document.createElement("i");
+        var reportIconPanel = document.createElement("div");
+        var reportDiv = document.createElement("div");
+        var reportI = document.createElement("i");
         downloadIconPanel.setAttribute("id", "icon-panel");
-        i.setAttribute("class", "i_download");
-        i.onclick = function (ev2) {
+        downloadI.setAttribute("class", "i_download");
+        downloadI.onclick = function (ev2) {
             util.downloadComponent(id);
         };
-        util.buildDom([toolbar, downloadIconPanel, div, i])
+        reportIconPanel.setAttribute("id", "icon-panel");
+        reportI.setAttribute("class","i_feedback");
+        reportI.onclick = function (ev2) {
+            buildFeedBackWindow();
+        };
+        util.buildDom([toolbar, downloadIconPanel, downloadDiv, downloadI]);
+        util.buildDom([toolbar,reportIconPanel,reportDiv,reportI]);
     }
 
+    /**
+     * 根据项目信息创建header
+     * @param json
+     */
     function buildHeader(json) {
         var header = document.getElementsByClassName("header")[0];
         var projectInfo = document.createElement("div");
@@ -54,5 +67,8 @@ window.onload = function (ev) {
         util.buildDom([projectInfo, projectName]);
         util.buildDom([projectInfo, version]);
         util.buildDom([projectInfo, updateDate]);
+    }
+    function buildFeedBackWindow() {
+        popUp.showPopUp();
     }
 };
