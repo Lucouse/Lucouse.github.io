@@ -27,7 +27,9 @@
     animation: iconHover 30ms ease-in;
     animation-fill-mode: forwards;
 }
-
+#icon-panel div i:active{
+    color: #4B0082;
+}
 #icon-panel div i {
     position: absolute;
     right: 0px;
