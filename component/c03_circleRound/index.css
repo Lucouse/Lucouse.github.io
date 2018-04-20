@@ -19,9 +19,11 @@
 @keyframes circleLoader {
     from {
         transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
     }
     to {
         transform: rotateZ(360deg);
+        -m-transform: rotateZ(360deg);
     }
 }
 @-webkit-keyframes circleLoader {

@@ -54,7 +54,7 @@ var Message = (function(){
         divMessage.html(message);
         divContainer.append(divClose);
         divContainer.append(divMessage);
-        divContainer.fadeOut(800,function(){divContainer.remove()});
+        divContainer.fadeOut(8000,function(){divContainer.remove()});
         return divContainer;
     }
 })

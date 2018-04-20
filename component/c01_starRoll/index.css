@@ -27,7 +27,7 @@
         transform-origin: center;
     }
     to {
-        margin-left: 300px;
+        margin-left: 250px;
         transform-origin: center;
         top: 0px;
         transform: scale(0.5) rotate(-180deg);
@@ -39,7 +39,7 @@
         transform-origin: center;
     }
     to {
-        margin-left: 300px;
+        margin-left: 250px;
         transform-origin: center;
         top: 0px;
         transform: scale(0.5) rotate(-180deg);
@@ -51,7 +51,7 @@
         transform-origin: center;
     }
     to {
-        margin-left: 300px;
+        margin-left: 250px;
         transform-origin: center;
         top: 0px;
         transform: scale(0.5) rotate(-180deg);
@@ -63,7 +63,7 @@
         transform-origin: center;
     }
     to {
-        margin-left: 300px;
+        margin-left: 250px;
         transform-origin: center;
         top: 0px;
         transform: scale(0.5) rotate(-180deg);
@@ -76,7 +76,7 @@
         margin-left: 0px;
     }
     to {
-        margin-left: 300px;
+        margin-left: 250px;
         transform-origin: center;
         transform: scale(0.5) rotate(-180deg);
     }

@@ -1,8 +1,20 @@
 var Api = (function () {
+    var fileType = {
+        json: "json",
+        text: "text",
+        html: "html",
+        css: "css",
+        xml: "xml"
+    };
+    var url = {
+        projectName: "Lucouse.github.io",
+        componentFolder: "component",
+        localComponentFolder: "localComponent"
+    };
     return {
         getComponent: getComponent,
         getComponentList: getComponentList,
-        download:download
+        download: download
     };
 
     /**
@@ -11,15 +23,10 @@ var Api = (function () {
      * @param fileName
      * @param callBack
      */
-    function getComponent(id, fileName,callBack) {
-        var url = '/Lucouse.github.io/component/' + id + '/'+fileName;
-        fetch(url).then(function (res) {
-            return res.text();
-        }).then(function (value) {
-            callBack(value);
-        }).catch(function (reason) {
-            message.alertMessage(reason,null)
-            console.error(reason);
+    function getComponent(id, fileName, callBack) {
+        var localUrl = util.buildUrl([url.projectName,url.componentFolder,id,fileName]);
+        download(localUrl, fileType.text, function (text) {
+            callBack(text);
         });
     }
 
@@ -28,14 +35,9 @@ var Api = (function () {
      * @param callBack
      */
     function getComponentList(callBack) {
-        var url = '/Lucouse.github.io/list.json';
-        fetch(url).then(function (res) {
-            return res.json();
-        }).then(function (value) {
-            callBack(value);
-        }).catch(function (reason) {
-            message.alertMessage(reason,null);
-            console.error(reason);
+        var localUrl =util.buildUrl([url.projectName,"list.json"]);
+        download(localUrl, fileType.json, function (json) {
+            callBack(json);
         });
     }
 
@@ -45,13 +47,17 @@ var Api = (function () {
      * @param fileType
      * @param callBack
      */
-    function download(url,fileType,callBack) {
+    function download(url, fileTypeParam, callBack) {
         fetch(url).then(function (res) {
-            return res.text();
+            if (fileTypeParam === fileType.json) {
+                return res.json();
+            } else if (fileTypeParam === fileType.text) {
+                return res.text();
+            }
         }).then(function (value) {
             callBack(value);
         }).catch(function (reason) {
-            message.alertMessage(reason,null);
+            message.alertMessage(reason, null);
             console.error(reason);
         });
     }

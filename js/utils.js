@@ -1,17 +1,23 @@
 var Util = (function () {
-    return {buildDom: buildDom, downloadComponent: downloadComponent, buildZip: buildZip};
+    return {buildDom: buildDom, downloadComponent: downloadComponent, buildZip: buildZip, buildUrl: buildUrl};
 
+    /**
+     * 根据Array创建Dom
+     * @param Array
+     */
     function buildDom(Array) {
         var length = Array.length;
         Array.forEach(function (value, index) {
-            if (index + 2 < length) {
+            if (index + 1 < length) {
                 value.appendChild(Array[index + 1]);
-            } else if (index + 1 < length) {
-                Array[index - 1].innerHTML = Array[index - 1].innerHTML + Array[index + 1];
             }
         })
     }
 
+    /**
+     *根据ID获取组件文件
+     * @param id
+     */
     function downloadComponent(id) {
         api.getComponent(id, "index.html", function (data) {
             api.getComponent(id, "index.css", function (data2) {
@@ -26,12 +32,16 @@ var Util = (function () {
                             value: data2
                         }]
                     }
-                }
+                };
                 buildZip(json);
             });
         });
     }
 
+    /**
+     * 根据json文件内容创建压缩包
+     * @param json
+     */
     function buildZip(json) {
         var zip = new JSZip();
         var folder = zip.folder(json.folder.name);
@@ -40,6 +50,19 @@ var Util = (function () {
         folder.generateAsync({type: "base64"}).then(function (base64) {
             location.href = "data:application/zip;base64," + base64;
         })
+    }
+
+    /**
+     * 使用array创建url
+     * @param Array
+     * @returns {string}
+     */
+    function buildUrl(Array) {
+        var localUrl = "";
+        Array.forEach(function (value) {
+            localUrl = localUrl + "/" + value;
+        });
+        return localUrl;
     }
 });
 var util = new Util;
