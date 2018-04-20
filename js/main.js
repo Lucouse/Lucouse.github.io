@@ -11,7 +11,7 @@ window.onload = function (ev) {
                 var h3 = document.createElement("h3");
                 div.setAttribute("class", "main-panel");
                 h3.innerText = object.name_cn;
-                h3.setAttribute("onclick","util.download('"+object.id+"')");
+                h3.setAttribute("onclick","util.downloadComponent('"+object.id+"')");
                 var array = [document.getElementById("container"), div, h3, data.replace("index.css", "component/" + object.id + "/index.css")];
                 util.buildDom(array);
             });

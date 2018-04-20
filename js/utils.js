@@ -1,5 +1,5 @@
 var Util = (function () {
-    return {buildDom: buildDom, download: download, buildZip: buildZip};
+    return {buildDom: buildDom, downloadComponent: downloadComponent, buildZip: buildZip};
 
     function buildDom(Array) {
         var length = Array.length;
@@ -12,7 +12,7 @@ var Util = (function () {
         })
     }
 
-    function download(id) {
+    function downloadComponent(id) {
         api.getComponent(id, "index.html", function (data) {
             api.getComponent(id, "index.css", function (data2) {
                 var json = {
