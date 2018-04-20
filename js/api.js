@@ -14,7 +14,8 @@ var Api = (function () {
     return {
         getComponent: getComponent,
         getComponentList: getComponentList,
-        download: download
+        download: download,
+        getProjectInfo:getProjectInfo
     };
 
     /**
@@ -37,6 +38,17 @@ var Api = (function () {
     function getComponentList(callBack) {
         var localUrl =util.buildUrl([url.projectName,"list.json"]);
         download(localUrl, fileType.json, function (json) {
+            callBack(json);
+        });
+    }
+
+    /**
+     * 获取项目信息
+     * @param callBack
+     */
+    function getProjectInfo(callBack) {
+        var localUrl =util.buildUrl([url.projectName,"project.json"]);
+        download(localUrl,fileType.json,function (json) {
             callBack(json);
         });
     }
