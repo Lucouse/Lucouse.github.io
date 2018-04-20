@@ -116,6 +116,7 @@ h3 {
     display: inline-flex;
     height: 100%;
     font-family: "Microsoft YaHei UI";
+    margin-left: 5px;
 
 }
 .project-info :nth-child(1){
@@ -131,7 +132,7 @@ h3 {
     height: 1.2em;
     line-height: 1em;
     bottom: 0.8em;
-    right: calc(100% - 21em);
+    right: calc(100% - 22em);
     position: absolute;
 }
 .project-info :nth-child(3){
