@@ -1,6 +1,7 @@
 #path880 {
     animation: circleLoader 10s infinite;
     transform-origin: 91% 171%;
+    -webkit-transform-origin: 91% 171%;
 }
 
 @-moz-keyframes circleLoader {
