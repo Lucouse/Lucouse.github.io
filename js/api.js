@@ -32,7 +32,7 @@ var Api = (function () {
     }
 
     /**
-     * 获取当前组件列表
+     * 获取当前组 件列表
      * @param callBack
      */
     function getComponentList(callBack) {
