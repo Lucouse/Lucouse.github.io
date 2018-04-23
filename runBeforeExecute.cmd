@@ -17,5 +17,3 @@ echo -----------main.css to main.min.css compress completed
 del main.css
 @echo off
 echo -----------main.css deleted
-
-::压缩component文件夹下的文件
