@@ -1,5 +1,11 @@
 var Util = (function () {
-    return {buildDom: buildDom, downloadComponent: downloadComponent, buildZip: buildZip, buildUrl: buildUrl};
+    return {
+        buildDom: buildDom,
+        downloadComponent: downloadComponent,
+        buildZip: buildZip,
+        buildUrl: buildUrl,
+        buildMailToAddress: buildMailToAddress
+    };
 
     /**
      * 根据Array创建Dom
@@ -63,6 +69,44 @@ var Util = (function () {
             localUrl = localUrl + "/" + value;
         });
         return localUrl;
+    }
+
+    /**
+     * {address:array,subject:String,cc:array,bcc:array,body:String}
+     * @param json
+     * @param callback
+     */
+    function buildMailToAddress(json, callback) {
+        var MailToAddress = "MailTo:";
+        buildMailToContactor(json.address, function (contactors) {
+            MailToAddress = MailToAddress + contactors + "?";
+            MailToAddress = MailToAddress + "subject=" + json.subject + "&";
+            buildMailToContactor(json.cc, function (ccContactor) {
+                if (ccContactor !== "") {
+                    MailToAddress = MailToAddress + "cc=" + ccContactor + "&";
+                }
+                buildMailToContactor(json.bcc, function (bccContactor) {
+                    if (ccContactor !== "") {
+                        MailToAddress = MailToAddress + "bcc=" + bccContactor + "&" + json.body;
+                    }
+                    MailToAddress = MailToAddress + "body=" + json.body;
+                    callback(MailToAddress);
+                });
+            });
+        });
+    }
+
+    /**
+     * 按照邮箱收件人格式创建收件人字符串aaa@a.com;bbb@b.com;
+     * @param array
+     * @param callback
+     */
+    function buildMailToContactor(array, callback) {
+        var contactors = "";
+        for (var obj in array) {
+            contactors = contactors + array[obj] + ";";
+        }
+        callback(contactors);
     }
 });
 var util = new Util;

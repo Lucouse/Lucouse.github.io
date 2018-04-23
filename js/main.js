@@ -42,8 +42,14 @@ window.onload = function (ev) {
         };
         reportIconPanel.setAttribute("id", "icon-panel");
         reportI.setAttribute("class","i_feedback");
+        var a = document.createElement("a");
+        var mailAddress = {address:["dgldai@cn.ibm.com","2809606201@qq.com"],subject:"test",cc:[],bcc:[],body:"test"};
+        util.buildMailToAddress(mailAddress,function (obj) {
+            a.setAttribute("href",obj);
+        });
+        document.body.appendChild(a);
         reportI.onclick = function (ev2) {
-            buildFeedBackWindow();
+            a.click();
         };
         util.buildDom([toolbar, downloadIconPanel, downloadDiv, downloadI]);
         util.buildDom([toolbar,reportIconPanel,reportDiv,reportI]);
