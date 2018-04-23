@@ -43,7 +43,7 @@ window.onload = function (ev) {
         reportIconPanel.setAttribute("id", "icon-panel");
         reportI.setAttribute("class","i_feedback");
         var a = document.createElement("a");
-        var mailAddress = {address:["dgldai@cn.ibm.com","2809606201@qq.com"],subject:"test",cc:[],bcc:[],body:"test"};
+        var mailAddress = {address:["aaa@a.com","bbb@b.com"],subject:"test",cc:[],bcc:[],body:"test"};
         util.buildMailToAddress(mailAddress,function (obj) {
             a.setAttribute("href",obj);
         });
