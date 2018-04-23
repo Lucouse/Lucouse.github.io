@@ -36,12 +36,14 @@ window.onload = function (ev) {
         var reportDiv = document.createElement("div");
         var reportI = document.createElement("i");
         downloadIconPanel.setAttribute("id", "icon-panel");
-        downloadI.setAttribute("class", "i_download");
+        downloadI.setAttribute("class", "i_download tooltip");
+        downloadI.setAttribute("data-tooltip", "下载");
         downloadI.onclick = function (ev2) {
             util.downloadComponent(id);
         };
         reportIconPanel.setAttribute("id", "icon-panel");
-        reportI.setAttribute("class","i_feedback");
+        reportI.setAttribute("class","i_feedback tooltip");
+        reportI.setAttribute("data-tooltip","反馈");
         var a = document.createElement("a");
         var mailAddress = {address:["aaa@a.com","bbb@b.com"],subject:"test",cc:[],bcc:[],body:"test"};
         util.buildMailToAddress(mailAddress,function (obj) {
