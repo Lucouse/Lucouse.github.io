@@ -5,18 +5,93 @@
 }
 
 .main-panel {
-    width: 300px;
-    height: 100px;
+    width: 20em;
+    height: 7em;
     box-shadow: 2px 2px 8px #EBEBEB;
-    margin-top: 20px;
+    margin-top: 1em;
     display: inline-table;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 5px;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+    padding: 0.4em;
     position: relative;
     background-color: #ffffff;
 }
 
+.tooltip:after {
+    content: attr(data-tooltip);
+    position: absolute;
+    display: none;
+    box-shadow: 2px 2px 5px #EBEBEB;
+    font-size: 13px;
+    border-radius: 3px;
+    min-width: 3em;
+    max-width: 10em;
+    min-height: 2em;
+    background-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px;
+    color: #000000;
+    z-index: 9;
+    text-shadow: none;
+    font-weight: normal;
+    margin-left: -1.8em;
+}
+
+.tooltip:hover:after {
+    display:inline-flex;
+    animation: tooltipAnimation 80ms ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes tooltipAnimation {
+    0% {
+        margin-top: 0em;
+    }
+    100% {
+        margin-top: -3em;
+    }
+}
+@-o-keyframes tooltipAnimation {
+    0% {
+        margin-top: 0em;
+    }
+    100% {
+        margin-top: -3em;
+    }
+}
+@-ms-keyframes tooltipAnimation {
+    0% {
+        margin-top: 0em;
+    }
+    100% {
+        margin-top: -3em;
+    }
+}
+@-khtml-keyframes tooltipAnimation {
+    0% {
+        margin-top: 0em;
+    }
+    100% {
+        margin-top: -3em;
+    }
+}
+@-webkit-keyframes tooltipAnimation {
+    0% {
+        margin-top: 0em;
+    }
+    100% {
+        margin-top: -3em;
+    }
+}
+@-moz-keyframes tooltipAnimation {
+    0% {
+        margin-top: 0em;
+    }
+    100% {
+        margin-top: -3em;
+    }
+}
 #icon-panel {
     width: 30px;
     height: 30px;
@@ -119,11 +194,13 @@ h3 {
     margin-left: 5px;
 
 }
-.project-info :nth-child(1){
+
+.project-info :nth-child(1) {
     margin: 0px;
     padding: 0px;
 }
-.project-info :nth-child(2){
+
+.project-info :nth-child(2) {
     border: 0.1em solid #ffffff;
     padding: 0.2em;
     border-radius: 0.2em;
@@ -135,14 +212,15 @@ h3 {
     right: calc(100% - 22em);
     position: absolute;
 }
-.project-info :nth-child(3){
-font-size: 0.5em;
+
+.project-info :nth-child(3) {
+    font-size: 0.5em;
 }
 
 .header {
     position: fixed;
     width: 100%;
-    height: 40px;
+    height: 15%;
     background-color: blue;
     color: #fff;
     top: 0px;
@@ -151,7 +229,7 @@ font-size: 0.5em;
 }
 
 .container {
-    margin-top: 40px;
+    margin-top: 15%;
     margin-left: 0px;
     margin-right: 0px;
     width: 100%;
