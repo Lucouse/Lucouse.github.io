@@ -15,4 +15,6 @@
 }
 .close-button-container{
     color: black;
+    width: 1.1em;
+    margin-left: calc(100% - 1.7em);
 }

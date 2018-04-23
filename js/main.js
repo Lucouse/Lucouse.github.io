@@ -53,8 +53,18 @@ window.onload = function (ev) {
         reportI.onclick = function (ev2) {
             a.click();
         };
+        var openIconPanel = document.createElement("div");
+        var openDiv = document.createElement("div");
+        var openI = document.createElement("i");
+        openIconPanel.setAttribute("id", "icon-panel");
+        openI.setAttribute("class","i_new_window tooltip");
+        openI.setAttribute("data-tooltip","新窗口打开");
+        openI.onclick=function (ev2) {
+            buildComponentDetail();
+        };
         util.buildDom([toolbar, downloadIconPanel, downloadDiv, downloadI]);
         util.buildDom([toolbar,reportIconPanel,reportDiv,reportI]);
+        util.buildDom([toolbar,openIconPanel,openDiv,openI]);
     }
 
     /**
@@ -76,7 +86,8 @@ window.onload = function (ev) {
         util.buildDom([projectInfo, version]);
         util.buildDom([projectInfo, updateDate]);
     }
-    function buildFeedBackWindow() {
+    function buildComponentDetail() {
+        cover.showCover();
         popUp.showPopUp();
     }
 };
