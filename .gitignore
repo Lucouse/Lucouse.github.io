@@ -1,6 +1,13 @@
 
+<<<<<<< HEAD
 .idea/libraries/Generated_files.xml
 .idea/watcherTasks.xml
 runBeforeExecute.cmd
 runBeforeExecute.cmd
 runBeforeExecute.cmd
+=======
+.idea/workspace.xml
+.idea/workspace.xml
+.idea/libraries/Generated_files.xml
+.idea/workspace.xml
+>>>>>>> v1.1

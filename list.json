@@ -20,6 +20,10 @@
       {
         "name": "weChat",
         "version": ""
+      },
+      {
+        "name": "edge",
+        "version": ""
       }
     ]
   },
