@@ -1,3 +1,18 @@
+.custom-popUp-win{
+    min-width: 10em;
+    max-width: calc(100% - 60px);
+    min-height: 10em;
+    max-height: calc(100% - 60px);
+    background-color: #ffffff;
+    box-shadow: 2px 2px 8px #929292;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 60px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .component-tooBar {
     position: absolute;
     bottom: 0px;
@@ -21,26 +36,25 @@
     content: attr(data-tooltip);
     position: absolute;
     display: none;
-    box-shadow: 2px 2px 5px #EBEBEB;
+    box-shadow: 2px 2px 5px #929292;
     font-size: 13px;
     border-radius: 3px;
     min-width: 3em;
     max-width: 10em;
     min-height: 2em;
     background-color: #ffffff;
-    text-align: center;
-    vertical-align: middle;
     padding: 4px;
     color: #000000;
     z-index: 9;
     text-shadow: none;
     font-weight: normal;
+    font-style: normal;
     margin-left: -1.8em;
 }
 
 .tooltip:hover:after {
     display:inline-flex;
-    animation: tooltipAnimation 80ms ease-in;
+    animation: tooltipAnimation 100ms ease-in;
     animation-fill-mode: forwards;
 }
 

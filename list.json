@@ -20,6 +20,10 @@
       {
         "name": "weChat",
         "version": ""
+      },
+      {
+        "name": "edge",
+        "version": ""
       }
     ]
   },
@@ -93,6 +97,8 @@
         "name": "weChat",
         "version": ""
       }
+    ]
+  }
     ]
   }
 ]

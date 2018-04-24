@@ -15,11 +15,12 @@ window.onload = function (ev) {
                 var toolBar = document.createElement("div");
                 div.setAttribute("class", "main-panel");
                 h3.innerText = object.name_cn;
-                content.innerHTML = data.replace("index.css", "component/" + object.id + "/index.min.css");
+                content.innerHTML = data.replace("index.css", "component/" + object.id + "/index.min.css").replace("index.js", "component/" + object.id + "/index.min.js");
                 toolBar.setAttribute("class", "component-tooBar");
                 buildToolBar(toolBar, object.id);
-                var array = [document.getElementById("container"), div, h3, content, toolBar];
-                util.buildDom(array);
+                util.buildDom([document.getElementById("container"), div, h3]);
+                util.buildDom([div, content]);
+                util.buildDom([div, toolBar]);
             });
         });
     }
@@ -29,25 +30,30 @@ window.onload = function (ev) {
      * @param toolbar
      */
     function buildToolBar(toolbar, id) {
-        var downloadIconPanel = document.createElement("div");
-        var downloadDiv = document.createElement("div");
-        var downloadI = document.createElement("i");
+        util.buildIcon(toolbar, {iconClass: "i_download", "data-tooltip": "下载"}, function (i) {
+            i.onclick = function (ev2) {
+                util.downloadComponent(id);
+            };
+        });
+        // var downloadIconPanel = document.createElement("div");
+        // var downloadDiv = document.createElement("div");
+        // var downloadI = document.createElement("i");
         var reportIconPanel = document.createElement("div");
         var reportDiv = document.createElement("div");
         var reportI = document.createElement("i");
-        downloadIconPanel.setAttribute("id", "icon-panel");
-        downloadI.setAttribute("class", "i_download tooltip");
-        downloadI.setAttribute("data-tooltip", "下载");
-        downloadI.onclick = function (ev2) {
-            util.downloadComponent(id);
-        };
+        // downloadIconPanel.setAttribute("id", "icon-panel");
+        // downloadI.setAttribute("class", "i_download tooltip");
+        // downloadI.setAttribute("data-tooltip", "下载");
+        // downloadI.onclick = function (ev2) {
+        //     util.downloadComponent(id);
+        // };
         reportIconPanel.setAttribute("id", "icon-panel");
-        reportI.setAttribute("class","i_feedback tooltip");
-        reportI.setAttribute("data-tooltip","反馈");
+        reportI.setAttribute("class", "i_feedback tooltip");
+        reportI.setAttribute("data-tooltip", "反馈");
         var a = document.createElement("a");
-        var mailAddress = {address:["aaa@a.com","bbb@b.com"],subject:"test",cc:[],bcc:[],body:"test"};
-        util.buildMailToAddress(mailAddress,function (obj) {
-            a.setAttribute("href",obj);
+        var mailAddress = {address: ["aaa@a.com", "bbb@b.com"], subject: "test", cc: [], bcc: [], body: "test"};
+        util.buildMailToAddress(mailAddress, function (obj) {
+            a.setAttribute("href", obj);
         });
         document.body.appendChild(a);
         reportI.onclick = function (ev2) {
@@ -57,14 +63,14 @@ window.onload = function (ev) {
         var openDiv = document.createElement("div");
         var openI = document.createElement("i");
         openIconPanel.setAttribute("id", "icon-panel");
-        openI.setAttribute("class","i_new_window tooltip");
-        openI.setAttribute("data-tooltip","新窗口打开");
-        openI.onclick=function (ev2) {
-            buildComponentDetail();
+        openI.setAttribute("class", "i_new_window tooltip");
+        openI.setAttribute("data-tooltip", "新窗口打开");
+        openI.onclick = function (ev2) {
+            buildComponentDetail(id);
         };
-        util.buildDom([toolbar, downloadIconPanel, downloadDiv, downloadI]);
-        util.buildDom([toolbar,reportIconPanel,reportDiv,reportI]);
-        util.buildDom([toolbar,openIconPanel,openDiv,openI]);
+        // util.buildDom([toolbar, downloadIconPanel, downloadDiv, downloadI]);
+        util.buildDom([toolbar, reportIconPanel, reportDiv, reportI]);
+        util.buildDom([toolbar, openIconPanel, openDiv, openI]);
     }
 
     /**
@@ -80,14 +86,54 @@ window.onload = function (ev) {
         projectName.innerText = json.projectName;
         version.innerText = json.version;
         updateDate.innerText = json.latestUpdateDate;
-        projectInfo.setAttribute("class","project-info");
+        projectInfo.setAttribute("class", "project-info");
         util.buildDom([header, projectInfo]);
         util.buildDom([projectInfo, projectName]);
         util.buildDom([projectInfo, version]);
         util.buildDom([projectInfo, updateDate]);
     }
-    function buildComponentDetail() {
+
+    /**
+     * 打开组件详细窗口
+     * @param id
+     */
+    function buildComponentDetail(id) {
         cover.showCover();
-        popUp.showPopUp();
+        var container = document.createElement("div");
+        var h3 = document.createElement("h3");
+        var contentDiv = document.createElement("div");
+        var BrowserCompatibilityBar = document.createElement("div");
+        container.appendChild(h3);
+        container.appendChild(contentDiv);
+        container.appendChild(BrowserCompatibilityBar);
+        // div.setAttribute("class", "popUp-title");
+        api.getComponent(id, "index.html", function (html) {
+            contentDiv.innerHTML = html.replace("index.css", "component/" + id + "/index.min.css").replace("index.js", "component/" + id + "/index.min.js");
+            api.getComponentList(function (json) {
+                for (var index in json) {
+                    if (json[index].id === id) {
+                        h3.innerHTML = json[index].name_cn;
+                        buildComponentDetailBrowserCompatibilityBar(json[index].compatibility, BrowserCompatibilityBar);
+                    }
+                }
+            });
+            popUp.showPopUp(undefined, "custom-popUp-win", container);
+        });
+    }
+
+    function buildComponentDetailBrowserCompatibilityBar(array, parentNode) {
+        var iconClass = "";
+        var dataTooltip = "";
+        for (var index in array) {
+            switch (array[index]) {
+                case  "weChat":iconClass="i_wechat";dataTooltip="微信";break;
+                case  "chrome":iconClass="i_chrome";dataTooltip="Chrome";break;
+                case  "firefox":iconClass="i_firefox";dataTooltip="火狐";break;
+                case  "ie":iconClass="i_wechat";dataTooltip="微信";break;
+                case  "edge":iconClass="i_edge";dataTooltip="Edge";break;
+
+            }
+            util.buildIcon(parentNode, {iconClass: iconClass, "data-tooltip": dataTooltip});
+        }
     }
 };
