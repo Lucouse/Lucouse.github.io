@@ -1,4 +1,34 @@
-.custom-popUp-win{
+.component-detail-content {
+    min-height: 4em;
+    max-height: 20em;
+    width: 100%;
+}
+
+.wechat-icon:before {
+    color: #00B900;
+}
+
+.chrome-icon:before {
+    color: #ECEC00;
+}
+
+.firefox-icon:before {
+    color: #FF8000;
+}
+
+.ie-icon:before {
+    color: #0080FF;
+}
+
+.edge-icon:before {
+    color: #0080FF;
+}
+
+.popUp-toolbar-container {
+    margin: 0.5em;
+}
+
+.custom-popUp-win {
     min-width: 10em;
     max-width: calc(100% - 60px);
     min-height: 10em;
@@ -13,6 +43,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .component-tooBar {
     position: absolute;
     bottom: 0px;
@@ -53,7 +84,7 @@
 }
 
 .tooltip:hover:after {
-    display:inline-flex;
+    display: inline-flex;
     animation: tooltipAnimation 100ms ease-in;
     animation-fill-mode: forwards;
 }
@@ -66,6 +97,7 @@
         margin-top: -3em;
     }
 }
+
 @-o-keyframes tooltipAnimation {
     0% {
         margin-top: 0em;
@@ -74,6 +106,7 @@
         margin-top: -3em;
     }
 }
+
 @-ms-keyframes tooltipAnimation {
     0% {
         margin-top: 0em;
@@ -82,6 +115,7 @@
         margin-top: -3em;
     }
 }
+
 @-khtml-keyframes tooltipAnimation {
     0% {
         margin-top: 0em;
@@ -90,6 +124,7 @@
         margin-top: -3em;
     }
 }
+
 @-webkit-keyframes tooltipAnimation {
     0% {
         margin-top: 0em;
@@ -98,6 +133,7 @@
         margin-top: -3em;
     }
 }
+
 @-moz-keyframes tooltipAnimation {
     0% {
         margin-top: 0em;
@@ -106,6 +142,7 @@
         margin-top: -3em;
     }
 }
+
 #icon-panel {
     width: 30px;
     height: 30px;
@@ -242,6 +279,24 @@ h3 {
     z-index: 99;
 }
 
+.footer-li {
+    list-style: none;
+    float: left;
+    margin-left: 0.3em;
+    border-right: 0.1em solid #EBEBEB;
+    padding: 0.3em;
+    font-size: 0.8em;
+    color: darkcyan;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    height: 3em;
+    bottom: 0em;
+    background-color: ghostwhite;
+}
+
 .container {
     margin-top: 40px;
     margin-left: 0px;
@@ -254,4 +309,14 @@ html body {
     margin: 0px;
     font-family: Microsoft Yahei, "微软雅黑", "宋体", System, Arial;
     box-sizing: border-box;
+}
+a{
+    text-decoration:none;
+}
+a:link{
+    text-underline: none;
+}
+a:visited{
+    color: inherit;
+    text-decoration:none;
 }
