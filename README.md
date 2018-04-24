@@ -1,1 +1,1 @@
-# <a href="https://Lucouse.github.io">Lucouse.github.io</a>
+# <a href="https://Lucouse.github.io" target="_parent">Lucouse.github.io</a>
