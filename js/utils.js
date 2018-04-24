@@ -5,7 +5,7 @@ var Util = (function () {
         buildZip: buildZip,
         buildUrl: buildUrl,
         buildMailToAddress: buildMailToAddress,
-        buildIcon:buildIcon
+        buildIcon: buildIcon
     };
 
     /**
@@ -109,20 +109,22 @@ var Util = (function () {
         }
         callback(contactors);
     }
+
     /**
      *创建icon
      * @param parentNode
      * @param json {iconClass:String,data-tooltip:String}
      */
-    function buildIcon(parentNode,json,callback) {
+    function buildIcon(parentNode, json, callback) {
         var iconPanel = document.createElement("div");
         var div = document.createElement("div");
         var i = document.createElement("i");
         iconPanel.setAttribute("id", "icon-panel");
-        i.setAttribute("class", json.iconClass+" tooltip");
-        i.setAttribute("data-tooltip", json.data-tooltip);
-        buildDom([parentNode,iconPanel,div,i]);
-        callback(i);
+        i.setAttribute("class", json.iconClass + " tooltip");
+        i.setAttribute("data-tooltip", json["data-tooltip"]);
+        buildDom([parentNode, iconPanel, div, i]);
+        if (callback !== undefined)
+            callback(i);
     }
 });
 var util = new Util;
