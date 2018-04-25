@@ -11,11 +11,11 @@
       },
       {
         "name": "firefox",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "chrome",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "weChat",
@@ -23,7 +23,7 @@
       },
       {
         "name": "edge",
-        "version": ""
+        "version": "支持"
       }
     ]
   },
@@ -39,15 +39,19 @@
       },
       {
         "name": "firefox",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "chrome",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "weChat",
         "version": ""
+      },
+      {
+        "name": "edge",
+        "version": "支持"
       }
     ]
   },
@@ -63,15 +67,19 @@
       },
       {
         "name": "firefox",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "chrome",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "weChat",
         "version": ""
+      },
+      {
+        "name": "edge",
+        "version": "不支持"
       }
     ]
   },
@@ -87,15 +95,19 @@
       },
       {
         "name": "firefox",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "chrome",
-        "version": ""
+        "version": "支持"
       },
       {
         "name": "weChat",
         "version": ""
+      },
+      {
+        "name": "edge",
+        "version": "支持"
       }
     ]
   }

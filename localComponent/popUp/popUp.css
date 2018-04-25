@@ -5,7 +5,7 @@
     max-height: 40em;
     background-color: #ffffff;
     box-shadow: 2px 2px 8px #EBEBEB;
-    position: absolute;
+    position: fixed;
     left: 0px;
     right: 0px;
     top: 60px;
@@ -14,11 +14,16 @@
     margin-right: auto;
 }
 .close-button-container{
-    color: black;
     width: 1.1em;
     margin-left: calc(100% - 1.8em);
     position: absolute;
     margin-top: 0.3em;
+}
+.close-button-i:before{
+    color: #666666;
+}
+.close-button-i:hover:before{
+    color: #ff8040;
 }
 .popUp-content{
     width: 100%;

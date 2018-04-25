@@ -27,28 +27,34 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.i_chrome:before {
+.i_opera:before {
 	content: "\e010";
 }
 .i_wechat:before {
 	content: "\e011";
 }
-.i_edge:before {
+.i_feedback:before {
 	content: "\e012";
 }
-.i_firefox:before {
+.i_download:before {
 	content: "\e013";
 }
-.i_shut:before {
+.i_open:before {
 	content: "\e014";
 }
-.i_feedback:before {
+.i_close:before {
 	content: "\e015";
 }
-.i_new_window:before {
+.i_chrome:before {
 	content: "\e016";
 }
-.i_download:before {
+.i_firefox:before {
 	content: "\e017";
+}
+.i_edge:before {
+	content: "\e018";
+}
+.i_ie:before {
+	content: "\e019";
 }
 

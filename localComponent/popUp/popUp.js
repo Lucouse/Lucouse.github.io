@@ -19,7 +19,7 @@ var PopUp = (function () {
         var contentDiv = document.createElement("div");
         closePanel.setAttribute("class", "close-button-container");
         closeContainer.setAttribute("id", "icon-panel");
-        closeI.setAttribute("class", "i_shut");
+        closeI.setAttribute("class", "i_close close-button-i");
         closePanel.appendChild(closeContainer).appendChild(closeDiv).appendChild(closeI);
         if (className !== undefined)
             popUpWin.setAttribute("class", className);
