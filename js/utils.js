@@ -122,6 +122,9 @@ var Util = (function () {
         iconPanel.setAttribute("id", "icon-panel");
         i.setAttribute("class", json.iconClass + " tooltip");
         i.setAttribute("data-tooltip", json["data-tooltip"]);
+        for (var index in json.attr) {
+            iconPanel.setAttribute(json.attr[index].name, json.attr[index].value);
+        }
         buildDom([parentNode, iconPanel, div, i]);
         if (callback !== undefined)
             callback(i);

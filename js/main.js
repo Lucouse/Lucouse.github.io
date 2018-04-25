@@ -133,31 +133,37 @@ window.onload = function (ev) {
     function buildComponentDetailBrowserCompatibilityBar(array, parentNode) {
         var iconClass = "";
         var dataTooltip = "";
+        var version = "";
         for (var index in array) {
             switch (array[index].name) {
                 case  "weChat":
                     iconClass = "i_wechat wechat-icon";
                     dataTooltip = "微信";
+                    if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
                 case  "chrome":
                     iconClass = "i_chrome chrome-icon";
                     dataTooltip = "Chrome";
+                    if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
                 case  "firefox":
                     iconClass = "i_firefox firefox-icon";
                     dataTooltip = "火狐";
+                    if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
                 case  "ie":
                     iconClass = "i_ie ie-icon";
                     dataTooltip = "IE";
+                    if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
                 case  "edge":
                     iconClass = "i_edge edge-icon";
                     dataTooltip = "Edge";
+                    if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
 
             }
-            util.buildIcon(parentNode, {iconClass: iconClass, "data-tooltip": dataTooltip});
+            util.buildIcon(parentNode, {iconClass: iconClass, "data-tooltip": dataTooltip, "attr": [{name: "version",value:version}]});
         }
     }
 
