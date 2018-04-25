@@ -1,6 +1,6 @@
 /**
  *提示消息组件
- * @type {Function}
+ * source type:原生js
  */
 var Message = (function(){
     //消息类型

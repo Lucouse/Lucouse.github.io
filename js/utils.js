@@ -1,11 +1,16 @@
+/**
+ *
+ * 工具类
+ * 外部依赖：api.js,jszip.min.js
+ */
 var Util = (function () {
     return {
         buildDom: buildDom,
         downloadComponent: downloadComponent,
         buildZip: buildZip,
         buildUrl: buildUrl,
-        buildMailToAddress: buildMailToAddress,
-        buildIcon: buildIcon
+        buildMailToAddress: buildMailToAddress
+        // buildIcon: buildIcon
     };
 
     /**
@@ -108,26 +113,6 @@ var Util = (function () {
             contactors = contactors + array[obj] + ";";
         }
         callback(contactors);
-    }
-
-    /**
-     *创建icon
-     * @param parentNode
-     * @param json {iconClass:String,data-tooltip:String}
-     */
-    function buildIcon(parentNode, json, callback) {
-        var iconPanel = document.createElement("div");
-        var div = document.createElement("div");
-        var i = document.createElement("i");
-        iconPanel.setAttribute("id", "icon-panel");
-        i.setAttribute("class", json.iconClass + " tooltip");
-        i.setAttribute("data-tooltip", json["data-tooltip"]);
-        for (var index in json.attr) {
-            iconPanel.setAttribute(json.attr[index].name, json.attr[index].value);
-        }
-        buildDom([parentNode, iconPanel, div, i]);
-        if (callback !== undefined)
-            callback(i);
     }
 });
 var util = new Util;

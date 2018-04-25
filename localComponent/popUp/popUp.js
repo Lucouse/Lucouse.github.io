@@ -1,3 +1,7 @@
+/**
+ * 创建HTML popUp窗口
+ * source type:原生js
+ */
 var PopUp = (function () {
     return {showPopUp: showPopUp};
 

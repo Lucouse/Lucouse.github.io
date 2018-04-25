@@ -1,3 +1,7 @@
+/**
+ * 画面覆盖层
+ * source type:原生js
+ */
 var Cover = (function () {
     var coverDom = document.createElement("div");
     var parentNode = document.body;

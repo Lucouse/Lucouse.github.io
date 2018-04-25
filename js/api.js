@@ -15,7 +15,8 @@ var Api = (function () {
         getComponent: getComponent,
         getComponentList: getComponentList,
         download: download,
-        getProjectInfo:getProjectInfo
+        getProjectInfo: getProjectInfo,
+        getHelpInfo: getHelpInfo
     };
 
     /**
@@ -25,7 +26,7 @@ var Api = (function () {
      * @param callBack
      */
     function getComponent(id, fileName, callBack) {
-        var localUrl = util.buildUrl([url.projectName,url.componentFolder,id,fileName]);
+        var localUrl = util.buildUrl([url.projectName, url.componentFolder, id, fileName]);
         download(localUrl, fileType.text, function (text) {
             callBack(text);
         });
@@ -36,7 +37,7 @@ var Api = (function () {
      * @param callBack
      */
     function getComponentList(callBack) {
-        var localUrl =util.buildUrl([url.projectName,"list.json"]);
+        var localUrl = util.buildUrl([url.projectName, "list.json"]);
         download(localUrl, fileType.json, function (json) {
             callBack(json);
         });
@@ -47,9 +48,20 @@ var Api = (function () {
      * @param callBack
      */
     function getProjectInfo(callBack) {
-        var localUrl =util.buildUrl([url.projectName,"project.json"]);
-        download(localUrl,fileType.json,function (json) {
+        var localUrl = util.buildUrl([url.projectName, "project.json"]);
+        download(localUrl, fileType.json, function (json) {
             callBack(json);
+        });
+    }
+
+    /**
+     * 获取用户帮助信息
+     * @param callBack
+     */
+    function getHelpInfo(callBack) {
+        var localUrl = util.buildUrl([url.projectName, "help.json"]);
+        download(localUrl, fileType.json, function (json) {
+            callBack(json)
         });
     }
 
@@ -69,8 +81,7 @@ var Api = (function () {
         }).then(function (value) {
             callBack(value);
         }).catch(function (reason) {
-            message.alertMessage(reason, null);
-            console.error(reason);
+            message.alertMessage(reason,null);
         });
     }
 });

@@ -1,8 +1,18 @@
-window.onload = function (ev) {
+var Main = (function (ev) {
+    return {
+        init: init, helpInit: helpInit
+    };
+
     function init() {
         buildComponentListDom();
         buildHeader();
         buildFooter();
+    }
+
+    function helpInit() {
+        buildHeader();
+        buildFooter();
+        help.buildHelpPage(document.getElementsByClassName("container")[0]);
     }
 
     function buildComponentListDom() {
@@ -31,7 +41,7 @@ window.onload = function (ev) {
      * @param toolbar
      */
     function buildToolBar(toolbar, id) {
-        util.buildIcon(toolbar, {iconClass: "i_download", "data-tooltip": "下载"}, function (i) {
+        fontFaceIcon.buildIcon(toolbar, {iconClass: "i_download", "data-tooltip": "下载"}, function (i) {
             i.onclick = function (ev2) {
                 util.downloadComponent(id);
             };
@@ -41,13 +51,13 @@ window.onload = function (ev) {
         util.buildMailToAddress(mailAddress, function (obj) {
             a.setAttribute("href", obj);
         });
-        document.body.appendChild(a);
-        util.buildIcon(toolbar, {iconClass: "i_feedback", "data-tooltip": "反馈"}, function (i) {
+        toolbar.appendChild(a);
+        fontFaceIcon.buildIcon(toolbar, {iconClass: "i_feedback", "data-tooltip": "反馈"}, function (i) {
             i.onclick = function (ev2) {
                 a.click();
             };
         });
-        util.buildIcon(toolbar, {iconClass: "i_open", "data-tooltip": "新窗口打开"}, function (i) {
+        fontFaceIcon.buildIcon(toolbar, {iconClass: "i_open", "data-tooltip": "新窗口打开"}, function (i) {
             i.onclick = function (ev2) {
                 buildComponentDetail(id);
             };
@@ -85,11 +95,14 @@ window.onload = function (ev) {
         var footer = document.getElementsByClassName("footer");
         var info = document.createElement("div");
         var ul = document.createElement("ul");
-        ul.setAttribute("class", "footer-ul");
-        var array = ["帮助", "联系我们"];
+        ul.setAttribute("class", "footer-ul list-Landscape");
+        var array = [{name: "帮助", url: "pages/help.html"}, {name: "联系我们", url: ""}];
         for (var index in array) {
             var li = document.createElement("li");
-            li.innerHTML = array[index];
+            var a = document.createElement("a");
+            a.innerHTML = array[index].name;
+            a.setAttribute("href", array[index].url);
+            li.appendChild(a);
             ul.appendChild(li);
         }
         info.appendChild(ul);
@@ -163,9 +176,12 @@ window.onload = function (ev) {
                     break;
 
             }
-            util.buildIcon(parentNode, {iconClass: iconClass, "data-tooltip": dataTooltip, "attr": [{name: "version",value:version}]});
+            fontFaceIcon.buildIcon(parentNode, {
+                iconClass: iconClass,
+                "data-tooltip": dataTooltip,
+                "attr": [{name: "version", value: version}]
+            });
         }
     }
-
-    init();
-};
+});
+var main = new Main;
