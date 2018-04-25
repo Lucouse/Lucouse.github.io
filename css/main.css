@@ -104,6 +104,9 @@
     animation: tooltipAnimation 100ms ease-in;
     animation-fill-mode: forwards;
 }
+.tooltip:active:after{
+    display: none;
+}
 
 @keyframes tooltipAnimation {
     0% {
