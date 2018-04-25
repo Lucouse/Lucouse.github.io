@@ -27,34 +27,49 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.i_opera:before {
+.i_wechat:before {
 	content: "\e010";
 }
-.i_wechat:before {
+.i_twitter:before {
 	content: "\e011";
 }
-.i_feedback:before {
+.i_facebook:before {
 	content: "\e012";
 }
-.i_download:before {
+.i_weibo:before {
 	content: "\e013";
 }
-.i_open:before {
+.i_github:before {
 	content: "\e014";
 }
-.i_close:before {
+.i_opera:before {
 	content: "\e015";
 }
-.i_chrome:before {
+.i_wechat_6:before {
 	content: "\e016";
 }
-.i_firefox:before {
+.i_feedback:before {
 	content: "\e017";
 }
-.i_edge:before {
+.i_download:before {
 	content: "\e018";
 }
-.i_ie:before {
+.i_open:before {
 	content: "\e019";
+}
+.i_close:before {
+	content: "\e01a";
+}
+.i_chrome:before {
+	content: "\e01b";
+}
+.i_firefox_logotyp:before {
+	content: "\e01c";
+}
+.i_edge:before {
+	content: "\e01d";
+}
+.i_ie:before {
+	content: "\e01e";
 }
 

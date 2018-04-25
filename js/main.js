@@ -46,15 +46,16 @@ var Main = (function (ev) {
                 util.downloadComponent(id);
             };
         });
-        var a = document.createElement("a");
-        var mailAddress = {address: ["aaa@a.com", "bbb@b.com"], subject: "test", cc: [], bcc: [], body: "test"};
-        util.buildMailToAddress(mailAddress, function (obj) {
-            a.setAttribute("href", obj);
-        });
-        toolbar.appendChild(a);
         fontFaceIcon.buildIcon(toolbar, {iconClass: "i_feedback", "data-tooltip": "反馈"}, function (i) {
             i.onclick = function (ev2) {
+                var a = document.createElement("a");
+                var mailAddress = {address: ["2809606201@qq.com"], subject: "组件反馈 id:"+id, cc: [], bcc: [], body: "在这里写下你的内容"};
+                util.buildMailToAddress(mailAddress, function (obj) {
+                    a.setAttribute("href", obj);
+                });
+                toolbar.appendChild(a);
                 a.click();
+                toolbar.removeChild(a);
             };
         });
         fontFaceIcon.buildIcon(toolbar, {iconClass: "i_open", "data-tooltip": "新窗口打开"}, function (i) {
@@ -150,7 +151,7 @@ var Main = (function (ev) {
         for (var index in array) {
             switch (array[index].name) {
                 case  "weChat":
-                    iconClass = "i_wechat wechat-icon";
+                    iconClass = "i_wechat_6 wechat-icon";
                     dataTooltip = "微信";
                     if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
@@ -160,7 +161,7 @@ var Main = (function (ev) {
                     if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;
                 case  "firefox":
-                    iconClass = "i_firefox firefox-icon";
+                    iconClass = "i_firefox_logotyp firefox-icon";
                     dataTooltip = "火狐";
                     if (array[index].version === "") version = "未知"; else version = array[index].version;
                     break;

@@ -10,7 +10,6 @@ var Util = (function () {
         buildZip: buildZip,
         buildUrl: buildUrl,
         buildMailToAddress: buildMailToAddress
-        // buildIcon: buildIcon
     };
 
     /**
@@ -93,7 +92,7 @@ var Util = (function () {
                 }
                 buildMailToContactor(json.bcc, function (bccContactor) {
                     if (ccContactor !== "") {
-                        MailToAddress = MailToAddress + "bcc=" + bccContactor + "&" + json.body;
+                        MailToAddress = MailToAddress + "bcc=" + bccContactor + "&body=" + json.body;
                     }
                     MailToAddress = MailToAddress + "body=" + json.body;
                     callback(MailToAddress);
