@@ -16,8 +16,12 @@ var FontFaceIcon = (function () {
         var div = document.createElement("div");
         var i = document.createElement("i");
         iconPanel.setAttribute("id", "icon-panel");
-        i.setAttribute("class", json.iconClass + " tooltip");
-        i.setAttribute("data-tooltip", json["data-tooltip"]);
+        if(json["data-tooltip"]!==undefined){
+            i.setAttribute("class", json.iconClass + " tooltip");
+            i.setAttribute("data-tooltip", json["data-tooltip"]);
+        }else{
+            i.setAttribute("class", json.iconClass);
+        }
         for (var index in json.attr) {
             iconPanel.setAttribute(json.attr[index].name, json.attr[index].value);
         }
