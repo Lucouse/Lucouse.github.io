@@ -85,10 +85,10 @@ window.onload = function (ev) {
         var footer = document.getElementsByClassName("footer");
         var info = document.createElement("div");
         var ul = document.createElement("ul");
+        ul.setAttribute("class", "footer-ul");
         var array = ["帮助", "联系我们"];
         for (var index in array) {
             var li = document.createElement("li");
-            li.setAttribute("class", "footer-li");
             li.innerHTML = array[index];
             ul.appendChild(li);
         }

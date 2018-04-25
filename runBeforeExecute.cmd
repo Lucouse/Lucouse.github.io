@@ -1,4 +1,5 @@
 ::Merge file starting
+@echo off
 copy /b js\api.js+js\utils.js+js\main.js+localComponent\cover\cover.js+localComponent\message\message.js+localComponent\popUp\popUp.js main.js
 @echo off
 echo -----------javaScript Merge completed
