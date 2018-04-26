@@ -1,6 +1,6 @@
 ::Merge file starting
 @echo off
-copy /b js\api.js+js\utils.js+js\help.js+js\main.js+localComponent\cover\cover.js+localComponent\message\message.js+localComponent\popUp\popUp.js+localComponent\fontFaceIcon\fontFaceIcon.js main.js
+copy /b js\api.js+js\utils.js+js\help.js+js\main.js+localComponent\cover\cover.js+localComponent\message\message.js+localComponent\popUp\popUp.js+localComponent\fontFaceIcon\fontFaceIcon.js+js\baiduTongji.js main.js
 @echo off
 echo -----------javaScript Merge completed
 copy /b css\main.css+localComponent\cover\cover.css+localComponent\message\message.css+localComponent\popUp\popUp.css+localComponent\fontFaceIcon\fontFaceIcon.css main.css
