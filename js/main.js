@@ -7,12 +7,14 @@ var Main = (function (ev) {
             buildComponentListDom();
             buildHeader();
             buildFooter();
+            _hmt.push(['_trackPageview', "/"]);
         }
 
         function helpInit() {
             buildHeader();
             buildFooter();
             help.buildHelpPage(document.getElementsByClassName("container")[0]);
+            _hmt.push(['_trackPageview', "/pages/help.html"]);
         }
 
         function buildComponentListDom() {
@@ -99,7 +101,6 @@ var Main = (function (ev) {
          * 创建footer
          */
         function buildFooter() {
-            var footer = document.getElementsByClassName("footer");
             var info = document.createElement("div");
             var ul = document.createElement("ul");
             ul.setAttribute("class", "footer-ul list-Landscape");
@@ -136,7 +137,7 @@ var Main = (function (ev) {
             }
             ul.appendChild(li);
             info.appendChild(ul);
-            footer[0].appendChild(info);
+            footer.buildFooter(undefined,info);
         }
 
         /**
