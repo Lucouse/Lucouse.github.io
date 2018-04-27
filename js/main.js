@@ -112,7 +112,7 @@ var Main = (function (ev) {
             var info = document.createElement("div");
             var ul = document.createElement("ul");
             ul.setAttribute("class", "footer-ul list-Landscape");
-            var array = [{name: "帮助", url: "/lucouse.github.io/pages/help.html"}];
+            var array = [{name: "帮助", url: "https://lucouse.github.io/pages/help.html"}];
             for (var index in array) {
                 var li = document.createElement("li");
                 var a = document.createElement("a");
