@@ -118,6 +118,7 @@ var Main = (function (ev) {
                 var a = document.createElement("a");
                 a.innerHTML = array[index].name;
                 a.setAttribute("href", array[index].url);
+                a.setAttribute("target","_blank");
                 li.appendChild(a);
                 ul.appendChild(li);
             }
