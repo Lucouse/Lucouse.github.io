@@ -94,6 +94,7 @@ var Main = (function (ev) {
                 util.buildDom([projectInfo, a, projectName]);
                 util.buildDom([projectInfo, version]);
                 util.buildDom([projectInfo, updateDate]);
+                buildHeaderToolBar(header,json.headerToolList);
             });
         }
 
@@ -137,7 +138,7 @@ var Main = (function (ev) {
             }
             ul.appendChild(li);
             info.appendChild(ul);
-            footer.buildFooter(undefined,info);
+            footer.buildFooter(undefined, info);
         }
 
         /**
@@ -213,6 +214,31 @@ var Main = (function (ev) {
                     "attr": [{name: "version", value: version}]
                 });
             }
+        }
+
+        /**
+         * 创建header上的工具栏
+         * @param header
+         * @param array
+         */
+        function buildHeaderToolBar(header, array) {
+            var ul = document.createElement("ul");
+            ul.setAttribute("class","list-Landscape header-toolBar");
+            for (var index in array) {
+                var li = document.createElement("li");
+                li.innerHTML = array[index].name;
+                ul.appendChild(li);
+                var subUl = document.createElement("ul");
+                subUl.setAttribute("class","list-vertical");
+                for (var subIndex in array[index].list) {
+                    var subLi = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.innerHTML = array[index].list[subIndex].name;
+                    a.setAttribute("href", array[index].list[subIndex].url);
+                    subUl.appendChild(subLi);
+                }
+            }
+            header.appendChild(ul);
         }
     }
 

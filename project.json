@@ -1,6 +1,17 @@
 {
-  "projectName":"前端Demo",
-  "projectName_en":"UIDemo",
-  "version":"v1.2",
-  "latestUpdateDate":"2018-04-25"
+  "projectName": "前端Demo",
+  "projectName_en": "UIDemo",
+  "version": "v1.2",
+  "latestUpdateDate": "2018-04-25",
+  "headerToolList": [
+    {
+      "name": "工具",
+      "list": [
+        {
+          "name": "二维码生成器",
+          "url": "Lucouse.github.io/localComponent/QRCode/index.html"
+        }
+      ]
+    }
+  ]
 }
