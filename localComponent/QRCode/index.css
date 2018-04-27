@@ -1,0 +1,18 @@
+#QRCodeInputText {
+    width: 20em;
+    resize: none;
+}
+
+#QRCode {
+    width: 100px;
+    height: 100px;
+    margin-top: 15px;
+}
+
+.QRCode-container {
+    margin: 0px auto 0px auto;
+    right: 0;
+    left: 0;
+    position: absolute;
+    width: 20em;
+}

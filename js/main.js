@@ -1,6 +1,6 @@
 var Main = (function (ev) {
         return {
-            init: init, helpInit: helpInit
+            init: init, helpInit: helpInit, initQRCode: initQRCode
         };
 
         function init() {
@@ -15,6 +15,11 @@ var Main = (function (ev) {
             buildFooter();
             help.buildHelpPage(document.getElementsByClassName("container")[0]);
             _hmt.push(['_trackPageview', "/pages/help.html"]);
+        }
+
+        function initQRCode() {
+            buildHeader();
+            buildFooter();
         }
 
         function buildComponentListDom() {
@@ -79,7 +84,9 @@ var Main = (function (ev) {
          */
         function buildHeader() {
             api.getProjectInfo(function (json) {
-                var header = document.getElementsByClassName("header")[0];
+                var header = document.createElement("div");
+                header.setAttribute("class", "header");
+                document.body.appendChild(header);
                 var projectInfo = document.createElement("div");
                 var a = document.createElement("a");
                 var projectName = document.createElement("h2");
@@ -94,7 +101,7 @@ var Main = (function (ev) {
                 util.buildDom([projectInfo, a, projectName]);
                 util.buildDom([projectInfo, version]);
                 util.buildDom([projectInfo, updateDate]);
-                buildHeaderToolBar(header,json.headerToolList);
+                buildHeaderToolBar(header, json.headerToolList);
             });
         }
 
@@ -105,7 +112,7 @@ var Main = (function (ev) {
             var info = document.createElement("div");
             var ul = document.createElement("ul");
             ul.setAttribute("class", "footer-ul list-Landscape");
-            var array = [{name: "帮助", url: "pages/help.html"}];
+            var array = [{name: "帮助", url: "/lucouse.github.io/pages/help.html"}];
             for (var index in array) {
                 var li = document.createElement("li");
                 var a = document.createElement("a");
@@ -223,18 +230,21 @@ var Main = (function (ev) {
          */
         function buildHeaderToolBar(header, array) {
             var ul = document.createElement("ul");
-            ul.setAttribute("class","list-Landscape header-toolBar");
+            ul.setAttribute("class", "list-Landscape header-toolBar");
             for (var index in array) {
                 var li = document.createElement("li");
                 li.innerHTML = array[index].name;
                 ul.appendChild(li);
                 var subUl = document.createElement("ul");
-                subUl.setAttribute("class","list-vertical");
+                subUl.setAttribute("class", "list-vertical");
+                li.appendChild(subUl);
                 for (var subIndex in array[index].list) {
                     var subLi = document.createElement("li");
                     var a = document.createElement("a");
                     a.innerHTML = array[index].list[subIndex].name;
                     a.setAttribute("href", array[index].list[subIndex].url);
+                    a.setAttribute("target", "_blank");
+                    subLi.appendChild(a);
                     subUl.appendChild(subLi);
                 }
             }

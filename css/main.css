@@ -1,9 +1,37 @@
-.header-toolBar{
+.header-toolBar {
     display: inline-flex;
 }
-.header-toolBar li{
+
+.header-toolBar li {
     color: #ffffff;
+    cursor: pointer;
 }
+
+.header-toolBar li ul {
+    /*content: "<a href='/lucouse.github.io/localComponent/QRCode/index.html'>QRCode</a>";*/
+    position: absolute;
+    display: none;
+    box-shadow: 2px 2px 5px #929292;
+    font-size: 13px;
+    border-radius: 3px;
+    min-width: 3em;
+    max-width: 10em;
+    min-height: 2em;
+    background-color: #ffffff;
+    padding: 4px;
+    color: #000000;
+    z-index: 9;
+    text-shadow: none;
+    font-weight: normal;
+    font-style: normal;
+    margin-left: -3.8em;
+    margin-top: 1.5em;
+}
+
+.header-toolBar li:hover ul {
+    display: inline-flex;
+}
+
 .list-vertical {
     margin-left: -2em;
 }
@@ -224,7 +252,7 @@ h3 {
     height: 1.2em;
     line-height: 1em;
     bottom: 0.8em;
-    right: calc(100% - 22em);
+    left: 20em;
     position: absolute;
 }
 
@@ -245,12 +273,8 @@ h3 {
     border-right: 0.1em solid #EBEBEB;
 }
 
-.footer {
-    position: fixed;
-    width: 100%;
-    height: 3em;
-    bottom: 0em;
-    background-color: #00343F;
+.footer-ul {
+    padding-top: 0.5em;
 }
 
 .container {
@@ -258,7 +282,7 @@ h3 {
     width: 100%;
 }
 
-html body ul{
+html body, ul {
     padding: 0px;
     margin: 0px;
     font-family: Microsoft Yahei, "微软雅黑", "宋体", System, Arial;
@@ -268,10 +292,11 @@ html body ul{
 /**
 百度意见反馈,置顶按钮
  */
-html #hm_t_undefined .hm-t-feedback-trigger,html #hm_t_undefined .hm-t-go-top{
+html #hm_t_undefined .hm-t-feedback-trigger, html #hm_t_undefined .hm-t-go-top {
     right: 1em;
 }
-html #hm_t_undefined .hm-t-feedback-trigger{
+
+html #hm_t_undefined .hm-t-feedback-trigger {
     background: #00343f;
 }
 
