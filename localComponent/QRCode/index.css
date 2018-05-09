@@ -6,7 +6,11 @@
 #QRCode {
     width: 100px;
     height: 100px;
-    margin-top: 15px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4em;
 }
 
 .QRCode-container {
@@ -15,4 +19,27 @@
     left: 0;
     position: absolute;
     width: 20em;
+    box-shadow: 2px 2px 3px #EBEBEB;
+    height: 11em;
+}
+
+.QRCode-inputText-container {
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-table;
+    position: absolute;
+}
+
+.QRCode-inputText-container ul li input {
+    width: 5em;
+}
+
+.QRCode-inputText-container ul li:nth-child(1):before {
+    content: "颜色";
+}
+
+.QRCode-inputText-container ul li:nth-child(2):before {
+    content: "背景色";
 }
