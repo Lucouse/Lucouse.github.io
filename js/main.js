@@ -122,11 +122,12 @@ var Main = (function (ev) {
                 li.appendChild(a);
                 ul.appendChild(li);
             }
-            var li = document.createElement("li");
+            var secLi = document.createElement("li");
+            var secUl = document.createElement("ul");
             var liText = document.createElement("li");
             liText.innerHTML = "contact us @";
-            li.appendChild(liText);
-            li.setAttribute("id", "contact-us");
+            secUl.appendChild(liText);
+            secUl.setAttribute("id", "contact-us");
             var array = [{
                 iconClass: {
                     iconClass: "i_github github-icon none-shadow"
@@ -137,15 +138,17 @@ var Main = (function (ev) {
                 var iconLi = document.createElement("li");
                 var a = document.createElement("a");
                 a.setAttribute("href", array[index].url);
-                li.appendChild(iconLi).appendChild(a);
+                secUl.appendChild(iconLi).appendChild(a);
                 fontFaceIcon.buildIcon(a, array[index].iconClass, function (i) {
                     i.click = (function () {
                         window.location = array[index].url;
                     });
                 });
             }
-            ul.appendChild(li);
+            secLi.appendChild(secUl);
+            ul.appendChild(secLi);
             info.appendChild(ul);
+            info.innerHTML=info.innerHTML+"<div>Font made from <a href=\"http://www.sfont.cn\">SFont</a> is licensed by CC BY 3.0</div>";
             footer.buildFooter(undefined, info);
         }
 
