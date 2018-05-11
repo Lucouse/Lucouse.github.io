@@ -1,3 +1,20 @@
+.sfont-link-style {
+    font-size: 0.5em;
+    vertical-align: center;
+    color: darkcyan;
+}
+
+.projectQRCodeContainer {
+    display: inline-table;
+    vertical-align: middle;
+    margin-left: 0.3em;
+}
+
+.projectQRCode {
+    width: 2em;
+    height: 2em;
+}
+
 .header-toolBar {
     display: inline-flex;
 }

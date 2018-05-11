@@ -88,16 +88,27 @@ var Main = (function (ev) {
                 header.setAttribute("class", "header");
                 document.body.appendChild(header);
                 var projectInfo = document.createElement("div");
+
+                var projectQRCodeContainer = document.createElement("div");
+                var projectQRCode = document.createElement("img");
+                projectQRCodeContainer.setAttribute("class","projectQRCodeContainer");
+                projectQRCode.setAttribute("src","images/siteQRCode.png");
+                projectQRCode.setAttribute("class","projectQRCode");
+
                 var a = document.createElement("a");
                 var projectName = document.createElement("h2");
                 var version = document.createElement("div");
                 var updateDate = document.createElement("div");
+
                 projectName.innerText = json.projectName;
                 version.innerText = json.version;
                 updateDate.innerText = json.latestUpdateDate;
                 projectInfo.setAttribute("class", "project-info");
                 a.setAttribute("href", "https://lucouse.github.io");
                 util.buildDom([header, projectInfo]);
+                //网站二维码
+                util.buildDom([header, projectQRCodeContainer, projectQRCode]);
+                //网站名
                 util.buildDom([projectInfo, a, projectName]);
                 util.buildDom([projectInfo, version]);
                 util.buildDom([projectInfo, updateDate]);
@@ -118,7 +129,7 @@ var Main = (function (ev) {
                 var a = document.createElement("a");
                 a.innerHTML = array[index].name;
                 a.setAttribute("href", array[index].url);
-                a.setAttribute("target","_blank");
+                a.setAttribute("target", "_blank");
                 li.appendChild(a);
                 ul.appendChild(li);
             }
@@ -148,7 +159,7 @@ var Main = (function (ev) {
             secLi.appendChild(secUl);
             ul.appendChild(secLi);
             info.appendChild(ul);
-            info.innerHTML=info.innerHTML+"<div>Font made from <a href=\"http://www.sfont.cn\">SFont</a> is licensed by CC BY 3.0</div>";
+            info.innerHTML = info.innerHTML + "<div class='sfont-link-style'>Font made from <a href=\"http://www.sfont.cn\">SFont</a> is licensed by CC BY 3.0</div>";
             footer.buildFooter(undefined, info);
         }
 
