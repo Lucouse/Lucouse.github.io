@@ -44,13 +44,32 @@ var Api = (function () {
     }
 
     /**
+     * 获取项目配置信息
+     * @param callBack
+     */
+    function getConfig(callBack) {
+        var localUrl = util.buildUrl([url.projectName, "config.json"]);
+        download(localUrl, fileType.json, function (json) {
+            callBack(json);
+        });
+    }
+
+    /**
      * 获取项目信息
      * @param callBack
      */
     function getProjectInfo(callBack) {
-        var localUrl = util.buildUrl([url.projectName, "project.json"]);
-        download(localUrl, fileType.json, function (json) {
-            callBack(json);
+        getConfig(function (config) {
+            var projectFileName = "project.json";
+            if (config.mode === "dev") {
+                projectFileName = "project-dev.json";
+            } else if (config.mode == "online" || config.mode=="") {
+                projectFileName = "project.json";
+            }
+            var localUrl = util.buildUrl([url.projectName, projectFileName]);
+            download(localUrl, fileType.json, function (json) {
+                callBack(json);
+            });
         });
     }
 
@@ -81,7 +100,7 @@ var Api = (function () {
         }).then(function (value) {
             callBack(value);
         }).catch(function (reason) {
-            message.alertMessage(reason,null);
+            message.alertMessage(reason, null);
         });
     }
 });
