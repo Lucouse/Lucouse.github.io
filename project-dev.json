@@ -9,7 +9,10 @@
       "list": [
         {
           "name": "二维码生成器",
-          "url": "/lucouse.github.io/localComponent/QRCode/index.html"
+          "url": "/Lucouse.github.io/localComponent/QRCode/index.html"
+        },{
+          "name": "CSS动画Demo下载",
+          "url": "/Lucouse.github.io/localComponent/CSSAnimation/index.html"
         }
       ]
     }
