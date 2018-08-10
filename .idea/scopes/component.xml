@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="component" pattern="file[Lucouse.github.io]:component//*||file[Lucouse.github.io]:font//*" />
+</component>

@@ -1,0 +1,34 @@
+{
+  "field": [
+    "id",
+    "name",
+    "url",
+    "upperLayer"
+  ],
+  "row": [
+    {
+      "id": "1",
+      "name": "工具",
+      "url": "",
+      "upperLayer": ""
+    },
+    {
+      "id": "2",
+      "name": "二维码生成器",
+      "url": "QRCode",
+      "upperLayer": "1"
+    },
+    {
+      "id": "3",
+      "name": "文本编辑器",
+      "url": "simpleWord",
+      "upperLayer": "1"
+    },
+    {
+      "id": "4",
+      "name": "我的文章",
+      "url": "articles",
+      "upperLayer": ""
+    }
+  ]
+}
