@@ -1,0 +1,12 @@
+{
+  "articles": [{
+    "id": "",
+    "name": "",
+    "updateTime": "",
+    "createTime": "",
+    "tags": [{
+      "code": "",
+      "text": ""
+    }]
+  }]
+}
