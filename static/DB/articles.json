@@ -1,12 +1,10 @@
-{
-  "articles": [{
-    "id": "",
-    "name": "",
-    "updateTime": "",
-    "createTime": "",
-    "tags": [{
-      "code": "",
-      "text": ""
-    }]
+[{
+  "id": "",
+  "name": "text",
+  "updateTime": "",
+  "createTime": "",
+  "tags": [{
+    "code": "",
+    "text": "text"
   }]
-}
+}]
