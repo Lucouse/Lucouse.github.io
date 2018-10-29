@@ -3,7 +3,7 @@ ProjectAPI.install = function (Vue, options) {
   // 1. 添加全局方法或属性
   Vue.prototype.$projectApi = {
     getArticle: function (id, callBack) {
-      fetch('/static/articles/' + id + '.text').then(res => {
+      fetch('/static/articles/' + id + '.html').then(res => {
         return res.text()
       }).then(data => {
         callBack(data)
