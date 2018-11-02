@@ -9,5 +9,7 @@ export default {
   cancel: "キャンセル",
   normal: "一般",
   language: "言語",
-  settings_saved: "保存しました"
+  settings_saved: "保存しました",
+  related_article: "関連記事",
+  recommond_article: "おすすめの記事"
 }

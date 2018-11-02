@@ -9,5 +9,7 @@ export default {
   cancel: "取消",
   normal: "一般",
   language: "语言",
-  settings_saved: "设置已保存"
+  settings_saved: "设置已保存",
+  related_article: "相关文章",
+  recommond_article: "推荐文章"
 }

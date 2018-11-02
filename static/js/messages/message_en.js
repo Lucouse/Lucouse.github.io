@@ -9,5 +9,7 @@ export default {
   cancel: "Cancel",
   normal: "Normal",
   language: "Language",
-  settings_saved: "Settings saved!"
+  settings_saved: "Settings saved!",
+  related_article: "Related Article",
+  recommond_article: "Recommond Article"
 }
