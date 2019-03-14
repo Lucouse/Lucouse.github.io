@@ -116,6 +116,13 @@
        d="M 2.8419862,291.03792 C 59.819936,202.0092 61.095563,202.0092 61.095563,202.0092"
        id="path3723"
        inkscape:connector-curvature="0" />
+      <animate 
+      attributeName="width"
+      attributeType="XML"
+      from="200" to="20"
+      begin="0s" dur="5s"
+      fill="freeze">
+      </animate>
     <path
        style="fill:url(#linearGradient5978-4);fill-opacity:1;stroke:#4600f2;stroke-width:6.50317621;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 118.81991,291.03792 C 61.842022,202.0092 60.566396,202.0092 60.566396,202.0092"

@@ -13,7 +13,7 @@ const messages = {
 }
 var lang = localStorage.getItem('locale')
 if (lang === undefined || lang === null) {
-  lang='zh'
+  lang = 'zh'
 }
 const i18n = new VueI18n({
   locale: lang,
