@@ -12,7 +12,7 @@ export default {
   settings_saved: '设置已保存',
   related_article: '相关文章',
   recommond_article: '推荐文章',
-  // 20190304 start
+  // 20190314 start
   appLinkEditTips: '输入的内容只会保存至本地，不会上传。',
   add: '添加',
   linkName: '名称',
@@ -20,6 +20,15 @@ export default {
   linkSample: '例：http://www.baidu.com',
   linkIcon: '图标地址',
   edit: '编辑',
-  delete: '删除'
-  // 20190304 end
+  delete: '删除',
+  // 20190314 end
+  // 20190315 start
+  internationalSite: '国际站点',
+  chinaMainlandSite: '中国大陆站点',
+  localDevMode: '本地开发模式',
+  unknowMode: '网站状态未知',
+  copyrightStatement: '版权所有©DaiGuoLiang，2019。保留所有权利',
+  poweredLabelGithub: '由Github提供支持',
+  poweredLabelGitee: '由Gitee提供支持'
+  // 20190315 end
 }
