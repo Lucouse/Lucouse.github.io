@@ -12,7 +12,8 @@
   {
     "name": "码云",
     "iconUrl": "./static/img/icon/coding.png",
-    "url": "https://gitee.com/"
+    "url": "https://gitee.com/",
+    "bgColor": "black"
   },
   {
     "name": "天源迪科OA",
