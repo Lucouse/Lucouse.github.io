@@ -1,0 +1,5 @@
+[
+  { "code": "baidu", "name": "百度", "url": "https://www.baidu.com/s" },
+  { "code": "google", "name": "谷歌", "url": "https://www.google.com/search" },
+  { "code": "bing", "name": "bing", "url": "https://cn.bing.com" }
+]
