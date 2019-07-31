@@ -18,5 +18,10 @@
     "name": "iconfont",
     "iconUrl": "https://gtms04.alicdn.com/tps/i4/TB1_oz6GVXXXXaFXpXXJDFnIXXX-64-64.ico",
     "url": "https://www.iconfont.cn/"
+  },
+  {
+    "name": "OA",
+    "iconUrl": "https://oa.tydic.com/css/images/icons/dic_logo.png",
+    "url": "https://oa.tydic.com/"
   }
 ]
