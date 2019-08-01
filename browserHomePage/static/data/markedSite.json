@@ -12,12 +12,6 @@
   {
     "name": "码云",
     "iconUrl": "./static/img/icon/coding.png",
-    "url": "https://gitee.com/",
-    "bgColor": "black"
-  },
-  {
-    "name": "天源迪科OA",
-    "iconUrl": "https://oa.tydic.com/css/images/icons/dic_logo.png",
-    "url": "https://oa.tydic.com/"
+    "url": "https://gitee.com/"
   }
 ]
