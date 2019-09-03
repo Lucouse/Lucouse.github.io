@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "name": "Lucouse",
+    "tags": ["java", "nodejs", "html"],
+    "label": "没什么想说的 from DB",
+    "pages": [
+      {
+        "link": "https://github.com/Lucouse",
+        "icon": { "type": "font face", "class": "iconfont icon-github" }
+      },
+      {
+        "link": "https://gitee.com/Lucouse",
+        "icon": { "type": "font face", "class": "iconfont icon-gitee" }
+      }
+    ]
+  }
+]

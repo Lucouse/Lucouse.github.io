@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "title": "Second slide",
+    "description": "丹霞地貌",
+    "img": "1.jpg"
+  },
+  {
+    "id": "2",
+    "title": "First slide",
+    "description": "丹霞地貌",
+    "img": "2.jpg"
+  }
+]

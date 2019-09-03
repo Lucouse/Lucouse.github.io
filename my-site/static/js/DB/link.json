@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "百度",
+    "icon": "https://www.baidu.com/favicon.ico",
+    "url": "http://www.baidu.com"
+  },
+  {
+    "id": 2,
+    "name": "Google",
+    "icon": "https://www.google.com.hk/favicon.ico",
+    "url": "http://www.google.com"
+  }
+]

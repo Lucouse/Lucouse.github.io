@@ -30,6 +30,9 @@ export default {
   unknowMode: 'モード不明',
   copyrightStatement: '著作権©DaiGuoLiang、2019年。 無断複写・転載を禁じます',
   poweredLabelGithub: 'Githubによって供給',
-  poweredLabelGitee: 'Giteeによって供給'
+  poweredLabelGitee: 'Giteeによって供給',
   // 20190315 end
+  // 20190319 start
+  searchArticlePlaceHolder: '文章名，文章タグ'
+  // 20190319 end
 }

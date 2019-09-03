@@ -30,6 +30,9 @@ export default {
   unknowMode: 'unknow Mode',
   copyrightStatement: 'Copyright © DaiGuoLiang, 2019. all rights reserved',
   poweredLabelGithub: 'Powered by Github',
-  poweredLabelGitee: 'Powered by Gitee'
+  poweredLabelGitee: 'Powered by Gitee',
   // 20190315 end
+  // 20190319 start
+  searchArticlePlaceHolder: 'Article Name，Article Label'
+  // 20190319 end
 }

@@ -29,6 +29,9 @@ export default {
   unknowMode: '网站状态未知',
   copyrightStatement: '版权所有©DaiGuoLiang，2019。保留所有权利',
   poweredLabelGithub: '由Github提供支持',
-  poweredLabelGitee: '由Gitee提供支持'
+  poweredLabelGitee: '由Gitee提供支持',
   // 20190315 end
+  // 20190319 start
+  searchArticlePlaceHolder: '文章名，文章标签'
+  // 20190319 end
 }
